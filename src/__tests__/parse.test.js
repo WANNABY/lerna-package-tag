@@ -90,14 +90,16 @@ describe('Test Parser', () => {
       scope: '@scope-name',
       packageName: 'package-name',
       version: '0.0.1',
-      preRelease: 'alpha.1'
+      preRelease: 'alpha.1',
+      preReleaseType: 'alpha'
     })
 
     expect(parse('package-name@0.0.1-beta.1')).toMatchObject({
       scope: '',
       packageName: 'package-name',
       version: '0.0.1',
-      preRelease: 'beta.1'
+      preRelease: 'beta.1',
+      preReleaseType: 'beta'
     })
   })
 })
