@@ -33,7 +33,7 @@ async function runAction() {
     core.exportVariable('LERNA_PACKAGE_VERSION', version)
     core.exportVariable('LERNA_PACKAGE_SCOPE', scope)
     core.exportVariable('LERNA_PACKAGE_PRE_RELEASE', preRelease)
-    core.exportVariable('LERNA_PACKAGE_PRE_RELEASE_TYPE', preRelease)
+    core.exportVariable('LERNA_PACKAGE_PRE_RELEASE_TYPE', preReleaseType)
   } catch (error) {
     core.setFailed(error.message)
   }
