@@ -1,3 +1,5 @@
+const preReleaseTypes = ['alpha', 'beta']
+
 function parseTag(ref) {
   if (ref && typeof ref === 'string') {
     const tagPath = 'refs/tags/'
@@ -11,9 +13,12 @@ function parseTag(ref) {
       const packageName = data[2]
       const version = data[3]
       const preRelease = data[4] ? data[4].replace('-', '') : ''
+      const preReleaseType = preRelease
+        ? preReleaseTypes.find((type) => preRelease.includes(type))
+        : ''
 
       if (data && packageName && version) {
-        return { scope, packageName, version, preRelease }
+        return { scope, packageName, version, preRelease, preReleaseType }
       }
     }
   }
