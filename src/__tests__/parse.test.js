@@ -101,5 +101,13 @@ describe('Test Parser', () => {
       preRelease: 'beta.1',
       preReleaseType: 'beta'
     })
+
+    expect(parse('package-name@0.0.1-2')).toMatchObject({
+      scope: '',
+      packageName: 'package-name',
+      version: '0.0.1-2',
+      preRelease: '',
+      preReleaseType: ''
+    })
   })
 })
